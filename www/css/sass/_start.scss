@@ -1,0 +1,299 @@
+// welcome and login screens -- start app
+
+/* WELCOME SCREEN */
+.welcome {
+	height: 100%;
+	width:100%;
+}
+.dark-banner {
+	z-index:1;
+	text-align: center;
+
+	.color-banner {
+		width:102%;
+		height: 4px;
+		z-index: 2!important;
+		margin-top:0px;
+		margin-left:-1%;
+		position: absolute;
+
+		td {
+			margin-top:0px;
+			height:inherit;
+		}
+	}
+}
+
+.banner {
+	padding:0px!important;
+	height:250px;
+	margin:0;
+	width:100%;
+}
+
+.bgs-silhouette {
+	z-index:auto!important;
+	width: 100%;
+	height: 252px;
+	@include center-bg-image('../../../images/general/silhouette.png');
+	margin-top:-2px!important;
+	@include side-margin(auto);
+	float:left;
+	opacity: 0.2;
+}
+
+.bgs-logo-large {
+	z-index: 1!important;
+	width: 100%;
+	height: 150px;
+	@include center-bg-image('../../../images/logos/bgs/bgsTitle.png');
+	margin-top:6%!important; 
+	@include side-margin(auto);
+	left:auto;
+	right:auto;
+	position: absolute;
+}
+
+input {
+	-webkit-box-shadow: none!important;
+	box-shadow: none!important;
+}
+
+.content-container {
+	margin-top:-2px;
+	@include side-margin(auto);
+	margin-bottom: 0;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	background-color: $lt-lt-gray;
+	background-clip: padding-box;
+	z-index:11!important;
+	position: relative;
+	padding-top: 5%;
+	@include side-padding(5%);
+}
+
+.content-container-header {
+	margin-top:-20%!important;
+	@include side-margin(auto);
+	margin-bottom: 10px!important;
+	width:100%!important;
+	-webkit-border-top-left-radius: 0px;
+	-webkit-border-top-right-radius: 0px;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-topright: 0px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	z-index:10!important;
+	position: relative;
+}
+
+.content-container-header-text {
+	text-align: center;
+	color:#fff;
+	font-weight: 400;
+	margin-top:3px;
+	text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
+}
+
+.button-container a {
+	text-decoration: none;
+}
+
+.button-link-container {
+	width: inherit;
+	height: inherit;
+	position: relative;
+	@include side-margin(auto);
+}
+
+.facebook-white-icon {
+	display: inline-block;
+	@include side-margin(auto);
+	width: 25px;
+	height: 25px;
+	vertical-align: middle;
+	@include center-bg-image('../../../images/buttons/fb/fbLogo.png');
+	z-index: 12;
+}
+
+.facebook-link {
+	font-family: "Lucida Grande", "Lucida Sans Unicode",  sans-serif;
+	font-size: 16px;
+	font-weight: 900;
+	color: #fff;
+	top: 0px;
+	margin-top: 0px;
+	text-shadow: 0 -1px rgba(0, 0, 0, 0.69);
+	height: 50px!important;
+	z-index: 12;
+	vertical-align: top;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.facebook-button-bg {
+	background-color: #3b5998!important;
+	z-index: 11;
+	margin: inherit;
+	margin-top:1%!important;
+	height: 50px!important;
+	width: 100%;
+	clear: right;
+	@include side-padding(0px);
+}
+
+.facebook-button-bg:active {
+	background-color: #264179!important;
+	z-index: 11;
+}
+.disclaimer-footer {
+	margin-top:3px;
+	font-size: 12pt;
+	text-align: center;
+}
+
+.button-container-separator {
+	text-align: center;
+	height: 10px;
+}
+
+.skip-login-button-bg {
+	margin-top:5px!important;
+	background-color: #ac90c6!important;
+	z-index: 11;
+	margin: inherit;
+	margin-top:5%!important;
+	height: 50px!important;
+	width: 100%;
+	clear: right;
+	@include side-padding(0px);
+	color: #fff!important;
+	text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6)!important;
+}
+
+.skip-login-button-bg:hover,
+.skip-login-button-bg:active {
+	background-color: #726185!important;
+}
+
+.goto-login-button,
+.goto-signup-button,
+.login-button,
+.signup-button,
+.send-password-button,
+.back-button,
+#sm-confirm-container .sm-yes,
+#sm-confirm-container .sm-no {
+	width: 49%;
+	display: inline-block;
+	@include side-margin(auto);
+}
+
+.goto-login-button,
+.login-button,
+.signup-button,
+.send-password-button {
+	float: left;
+}
+
+.login-button,
+.signup-button,
+.send-password-button,
+#sm-confirm-container .sm-yes {
+	background-color: #ac90c6!important;
+	color: #fff!important;
+	//text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6)!important;
+}
+
+.login-button:hover,
+.login-button:active,
+.signup-button:hover,
+.signup-button:active,
+.send-password-button:hover,
+.send-password-button:active,
+#sm-confirm-container .sm-yes:active,
+#sm-confirm-container .sm-yes:hover {
+	background-color: #726185!important;
+}
+
+.goto-signup-button,
+.back-button {
+	float:right;
+}
+
+.goto-login-button,
+.goto-signup-button,
+.back-button {
+	@include base-gray(0.2);
+
+	&:active {
+		@include base-gray(0.5, $lt-lt-gray);
+	}
+}
+
+/* LOGIN AND SIGNUP FORM FIELDS */
+input[type="text"],
+input[type="email"], 
+input[type="password"],
+input[type="number"] {
+	width:100%;
+	@include side-margin(auto);
+	border:solid 1px #cacaca;
+	padding: 0 0.25rem;
+	font-size:12pt;
+}
+
+.signup-form input[type="password"] {
+	width:48%;
+	padding: 0 0.25rem;
+	font-size:12pt;
+}
+
+#signup-password {
+	margin-left:0;
+	float:left;
+}
+
+#signup-password-confirm {
+	margin-right:0;
+	float:right;
+}
+
+.form-right-text,
+.form-left-text {
+	font-size: 14px;
+	text-align: right;
+	margin-top:-3px;
+	margin-bottom: 3px;
+	font-style: italic;
+	font-weight: 500;
+	color: #726185;
+	clear: left;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.form-left-text {
+	color: $drk-gray-font!important;
+	text-align: left!important;
+}
+
+.forgot-password-form {
+	color: $drk-gray-2;
+}
+
+.forgot-password-link {
+	height: 100%;
+	width: 100%;
+	color: #726185;
+	font-size: 18px;
+	font-weight: 600;
+
+	&:hover,
+	&:active {
+		color: $drk-purple;
+	}
+}

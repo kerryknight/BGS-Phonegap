@@ -1,0 +1,346 @@
+//scorecard styles
+
+/* SCORECARD */
+.scorecard-region {
+	height: 100%;
+}
+#player-region {
+	height: 100%;
+	width: 130px;
+	border-right: 1px solid $white50;
+	position:fixed;
+}
+
+#iscroll-scorecard-wrapper {
+	height:100%;
+	margin-left: 130px;
+	width:100%;
+	-webkit-background-clip: padding-box;
+}
+
+.scorecard-enter-score-data {
+	@include gray-border(top, 0.4, 0.1);
+}
+
+.scorecard-player-bar,
+.scorecard-hole-name-list {
+	height: 76px;
+	border-bottom: 1px solid $white50;
+}
+
+.scorecard-hole-name-list td {
+	height: inherit;
+	height: 76px;
+	border-right: 1px solid rgb(223, 226, 226)!important;
+	-webkit-background-clip: padding-box;
+}
+
+.scorecard-hole-name-list {
+	border-left: 1px solid white;
+}
+
+.scorecard-hole {
+	width: 100px;
+	text-align: center;
+	padding: 5px;
+	height:100%!important;
+}
+
+.scorecard-hole-score-number {
+	text-align: center;
+	height:100%!important;
+}
+
+.scorecard-hole-score-number-active {
+	background-color: $even-gray!important;
+} 
+
+.score-button {
+	width:47%!important;
+}
+
+.score-choice-button {
+	@include side-padding(10px);
+	@include base-gray(0.3);
+}
+
+.score-choice-button-active {
+	@include base-gray(0.5);
+	color:rgb(219, 219, 219)!important;
+}
+
+.score-button,
+.score-choice-button {
+	display: -webkit-box;
+  	-webkit-box-flex: 1;
+	width:32%;
+	display:block;
+	float:left;
+	margin: 0;
+  	padding: 0;
+}
+
+.sc-data-submenu {
+	width: 100%;
+	height:67px;
+	@include base-gray(0.3);
+	@include gray-border(top, 0.3, 0.1);
+	@include gray-border(bottom, 0.5, 0.0);
+}
+
+.sc-data-submenu div {
+	display:inline-block;
+	text-align: center;
+	float:right;
+}
+
+.sc-submenu-title {
+	line-height: 26px;
+}
+
+.scorecard-player-table {
+	width: 100%;
+	padding: 5px;
+	height:inherit;
+	margin: 0;
+	border-bottom: 1px solid rgb(223, 226, 226);
+}
+
+.scorecard-player-list,
+.scorecard-hole-name-list,
+.scorecard-hole-score-list {
+	list-style-type: none;
+	padding-left:0;
+	margin-top:0;
+}
+
+.scorecard-player-list li {
+	height: 52px!important;
+	
+	&:last-child {height:53px!important;}
+
+	-webkit-background-clip: padding-box;
+	border-spacing: 0px!important;
+
+	table {
+		border-spacing: 0px!important;
+
+		tr {
+			border-spacing: 0px!important;
+		}
+	}
+}
+
+.scorecard-hole-score-list {
+	border-left: 1px solid $white50;
+	border-bottom: 1px solid $white50;
+	border-spacing: 0px;
+
+	tr {
+		border-spacing: 0px!important;
+		padding-top:0px!important;
+		padding-bottom:0px!important;
+		height: 52px!important;
+
+		td {
+			height: 50px!important;
+			border-spacing: 0px!important;
+			width: 111px;
+			top:0;
+			bottom:0;
+			@include side-lr(0);
+			margin:0;
+			padding:0;
+			font-size: 24px;
+			color:$drk-gray-font;
+			-webkit-background-clip: padding-box!important;
+		}
+
+		&:first-child {
+			//width:110px!important;
+			//height: 54px!important;
+		}
+	}
+}
+
+.scorecard-player-name,
+.scorecard-hole-name {
+	height: 18px;
+	left:0;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis!important;
+	display: inline-block;
+}
+
+.scorecard-player-name {
+	width:80px;
+	font-size: 13px;
+	font-weight: 400;
+}
+
+.scorecard-hole-name {
+	font-size: 12px;
+	width: inherit;
+	font-weight: 400;
+}
+
+.scorecard-hole-par {
+	font-size: 11px;
+	margin-top: 5px;
+}
+
+.scorecard-hole-number {
+	font-size: 30px;
+	line-height: 26px;
+	color: $drk-purple;
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+
+.red-score {
+	color: red;
+}
+
+.scorecard-player-total-score {
+	@include source-sans(18px, bold);
+	color:$drk-purple!important;
+	width: 40px;
+	height: 34px;
+	text-align: center;
+	background-color:#e4e9e9;
+}
+
+.enter-score-subheader {
+	width:100%!important;
+	color:rgb(58, 63, 66);
+	height: 26px!important;
+	font-size: 16px;
+    //@include gray-border(bottom, 0.3, 0.1);
+    border-bottome: 1px solid rgba(128,128,128,0.3);
+}
+
+.enter-score-subheader div {
+	width:50%;
+	display:inline;
+	text-align: center;
+	line-height: 30px;
+}
+
+.subheader-value {
+	height:inherit;
+	float:right;
+}
+
+.subheader-name {
+	float:left;
+	height:inherit;
+}
+
+.score-data-item-list li {
+	border-bottom: $base-white-border;
+}
+
+.scorecard-player-handicap {
+	font-size: 12px;
+	height: 14px;
+	width: 120px;
+	left: 0;
+}
+
+.data-score-item-name {
+	float:left;
+	height: inherit;
+	color: rgb(58, 63, 66);
+	font-size:16px!important;
+	text-overflow: ellipsis!important;
+	white-space: nowrap;
+	overflow: hidden;
+	margin-right:15px;
+}
+
+.selected-scoring-item {
+	-webkit-box-shadow: inset 0px 0px 2px 4px $lt-purple;
+	-moz-box-shadow: inset 0px 0px 2px 4px $lt-purple;
+	box-shadow: inset 0px 0px 2px 4px $lt-purple;
+}
+
+.data-score-item-value {
+	font-size: 22px!important;
+	width: 50px;
+	color: rgb(58, 63, 66);
+	text-align: center;
+	vertical-align: middle;
+	margin-right: 20px;
+}
+
+.score-table {
+	width:160px!important;
+	padding-top:5px;
+	padding-bottom:5px;
+	display: inline-block;
+	border-spacing: 0;
+	line-height: 35px;
+}
+
+.data-score-buttons {
+	font-size: 60px;
+	color:black;
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+	text-align: center;
+	vertical-align: middle;
+	width: 35px;
+	color: $drk-purple;
+}
+
+.data-score-buttons div:active {
+	color:$even-gray;
+}
+
+#add-score,
+#remove-score {
+	margin-bottom: 12px;
+}
+
+.data-score-row {
+	width: 100%!important;
+	height: 50px!important;
+}
+
+#scorecard-total-score,
+#breakdown-total-score {
+	font-size: 40px;
+	line-height: 35px;
+	color:#ac90c6;
+	-webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: white;
+}
+
+#sc-scoring-breakdown,
+#sc-back-to-scorecard,
+#sc-back-to-score-entry {
+	font-size: 20px;
+	height: 100%;
+	line-height: 160%;
+	vertical-align: middle;
+	width: 35%;
+}
+
+#sc-total-score-data {
+	width: 28%;
+}
+
+#sc-enter-score-data {
+	width: 37%;
+}
+
+.score-data-entry td {
+	width: 32%!important;
+}
+
+#score-count {
+	width: 80px!important;
+	text-align:center;
+	font-size: 14pt;
+}

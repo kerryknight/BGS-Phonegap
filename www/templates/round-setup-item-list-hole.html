@@ -1,0 +1,30 @@
+<% 
+var determineRowColor = function() {
+	
+	holeNum % 2 ? color = 'lt-lt-gray' : color = 'no-color';
+	return color;
+}
+
+var formatDisclosureIndicator = function() {
+	var disclosure = '';
+
+	/*
+	if (name != 'Hole Name Not Added Yet') {
+		disclosure = 'Played?: ' + '<span>&nbsp;></span>';
+	} else {
+		disclosure = '<span>&nbsp;></span>';
+	}
+	*/
+	
+	disclosure = '<span>&nbsp;></span>';
+
+	return disclosure;
+}
+%> 
+<!-- For rows where there isn't a player added, we'll make the row gray and add a bottom border to separate for other gray rows -->
+<li class='rs-options-header <%= determineRowColor() %>  font-size-20'>
+	<div class="list-icon rs-list-item"><div id="hole-list-icon"></div></div>
+	<div class="rs-chevron"><%= formatDisclosureIndicator() %></div>
+	<div class="rs-type"> Hole <%= holeNum %>:</div>
+	<div class="rs-name"><%= name %></div>
+</li>

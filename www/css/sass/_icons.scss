@@ -1,0 +1,104 @@
+//icons
+
+.list-icon {
+	height:50px;
+	width: 40px;
+	float: left;
+	margin-left:5px;
+}
+
+.rs-list li .list-icon {
+	margin-left:0px;
+}
+
+#rs-players-icon {
+	width:25px;
+	background-image:url(../../../images/icons/779-players-gray.png);
+}
+
+#rs-hole-icon {
+	width:28.5px;
+	background-image:url(../../../images/icons/790-golf-gray.png);
+} 
+
+#rs-automatic-icon {
+	width:28.5px;
+	background-image:url(../../../images/icons/873-automatic-gray.png);
+}
+
+#rs-drink-icon {
+	width:22px;
+	background-image:url(../../../images/icons/799-beverage-gray.png);
+}
+
+#rs-drink-icon-white {
+	width:22px;
+	background-image:url(../../../images/icons/799-beverage.png);
+}
+
+#rs-bonus-icon {
+	width:28.5px;
+	background-image:url(../../../images/icons/870-bonus-gray.png);
+}
+
+#rs-bonus-icon-white {
+	width:28.5px;
+	background-image:url(../../../images/icons/870-bonus.png);
+}
+
+#rs-penalty-icon {
+	width:28px;
+	background-image:url(../../../images/icons/875-penalty-gray.png);
+}
+
+#rs-penalty-icon-white {
+	width:28px;
+	background-image:url(../../../images/icons/875-penalty.png);
+}
+
+#rs-cloud-down-icon {
+	width:28.5px;
+	background-image:url(../../../images/icons/731-cloud-download-gray.png);
+}
+
+#rs-delete-icon {
+	width:28.5px;
+	background-image:url(../../../images/icons/791-warning-gray.png);
+}
+
+#male-list-icon {
+	width:28.5px;
+	background-image:url(../../../images/icons/769-male-gray.png);
+}
+
+#male-list-icon-white {
+	width:28.5px;
+	background-image:url(../../../images/icons/769-male.png);
+}
+
+#hole-list-icon {
+	width:28.5px;
+	background-image:url(../../../images/icons/790-golf-gray.png);
+}
+
+#rs-players-icon,
+#rs-hole-icon,
+#rs-automatic-icon,
+#rs-drink-icon,
+#rs-bonus-icon,
+#rs-penalty-icon,
+#rs-drink-icon-white,
+#rs-bonus-icon-white,
+#rs-penalty-icon-white,
+#rs-cloud-down-icon,
+#rs-delete-icon,
+#male-list-icon,
+#male-list-icon-white,
+#hole-list-icon {
+	background-repeat:no-repeat;
+	background-size:contain;
+	background-position: center center;
+	margin-left: auto;
+	margin-right: auto;
+	height:50px;
+}

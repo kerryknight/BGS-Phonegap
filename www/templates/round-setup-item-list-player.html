@@ -1,0 +1,42 @@
+<% 
+var determineRowColor = function() {
+	var color = '';
+	
+	if (displayName != 'Touch to Add New Player') {
+		color = (playerNum - 1) % 2 ? 'no-color' : 'lt-lt-gray';
+	} else {
+		color = 'lt-drk-gray';
+	} 
+	return color;
+}
+
+var determineIconId = function() {
+	var iconId = 'male-list-icon';
+	/*
+	if (displayName != 'Touch to Add New Player') {
+		iconId = 'male-list-icon';
+	} else {
+		iconId = 'male-list-icon-white';
+	} */
+	return iconId;
+}
+
+var formatDisclosureIndicator = function() {
+	var disclosure = '';
+
+	if (displayName != 'Touch to Add New Player') {
+		disclosure = 'Handicap: ' + handicap + '<span>&nbsp;></span>';
+	} else {
+		disclosure = '<span>&nbsp;></span>';
+	}
+
+	return disclosure;
+}
+%> 
+<!-- For rows where there isn't a player added, we'll make the row gray and add a bottom border to separate for other gray rows -->
+<li class='rs-options-header <%= determineRowColor() %>  font-size-20'>
+	<div class="list-icon rs-list-item"><div id="<%= determineIconId() %>"></div></div>
+	<div class="rs-chevron"><%= formatDisclosureIndicator() %></div>
+	<div class="rs-type"> Player <%= playerNum %>:</div>
+	<div class="rs-name"><%= displayName %></div>
+</li>

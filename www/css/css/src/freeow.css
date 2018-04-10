@@ -1,0 +1,161 @@
+/*
+
+This stylesheet provides some sample styles to use with Freeow! You may use
+these in your project or create your own!
+
+For my samples, I'm assuming that you will call freeow() on a container with
+the class .freeow applied to it.
+
+The default template function produces markup matching this outline:
+
+	div (classes passed in options get applied here)
+		div.background
+			div.content
+				h2
+				p
+		span.icon
+		span.close
+
+Don't forget: You can make your own template function if this markup doesn't work for your project. The function must accept the title and message as arguments and return a DOM element (the message box).
+
+Update $.fn.freeow.defaults.template or pass the function as the template
+member of the options object when calling freeow().
+
+*/
+
+
+/* Boilerplate -------------------------------------------------------------- */
+
+/* Outermost Container */
+.freeow {
+    position: fixed;
+    width: 101%;
+    z-index: 9999;
+    overflow: visible;
+}
+
+.freeow-navbar-center {
+	bottom: 44px;
+	margin-left: -1px; /*hide border*/
+}
+
+.freeow-bottom-center {
+	bottom: 0px;
+	margin-left: -1px; /*hide border*/
+}
+
+/* Message */
+.freeow > div {
+    position: relative;
+    margin-bottom: 0px;
+	cursor: pointer;
+}
+.freeow .freeow-content {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+.freeow .freeow-background {
+    margin: 0px 0px -5px 0px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.freeow h2,
+.freeow p {
+    margin: 0px;
+    padding: 0;
+}
+.freeow .icon {
+    position: absolute;
+    display: block;
+    width: 48px;
+    height: 48px;
+    top: 5px;
+    left: 10px;
+    background: transparent url(images/notice.png) no-repeat 0 0;
+    z-index: 1;
+}
+.freeow .close {
+    position: absolute;
+    display: block;
+    width: 24px;
+    height: 24px;
+    top: 8px;
+    left: 8px;
+    background: none;
+    z-index: 2;
+}
+.freeow div:hover .close {
+    /*background: transparent url(images/close.png) no-repeat 0 0;*/
+}
+
+
+/* Icons -------------------------------------------------------------------- */
+
+.freeow .slide .icon   { background-image: url(images/slide.png); }
+.freeow .pushpin .icon { background-image: url(images/pushpin.png); }
+.freeow .freeow-error .icon   { background-image: url(images/error.png); }
+
+
+/* Specific Styles ---------------------------------------------------------- */
+
+/* Success */
+.freeow .freeow-success {
+    position:relative;
+    bottom:0px!important;
+}
+
+.freeow .freeow-success .freeow-background {
+	background-color: rgba(161, 231, 153, 1.0);
+	border:solid 1px #3ca730;
+}
+.freeow .freeow-success .freeow-content {
+	color:#060;
+}
+.freeow .freeow-success h2 {
+	font-weight:700;
+    font-family:'Open Sans', sans-serif!important;
+    font-size: 14px;
+    line-height: 16px;
+	text-shadow:none;
+	box-shadow:none;
+}
+.freeow .freeow-success p {
+    padding-top: 0px;
+    font-family:'Lato', sans-serif!important;
+    font-size:14px;
+	font-weight:normal;
+	text-shadow:none;
+	box-shadow:none;
+}
+
+/* Error */
+.freeow .freeow-error {
+    position:relative;
+    bottom:0px!important;
+}
+
+.freeow .freeow-error .freeow-background {
+	background-color: rgba(255, 185, 185, 1.0);
+	border:solid 1px #c24747;
+}
+.freeow .freeow-error .freeow-content {
+	color:#C00;
+}
+.freeow .freeow-error h2 {
+	font-weight:700;
+    font-family:'Open Sans', sans-serif!important;
+    font-size: 14px;
+    line-height: 16px;
+	text-shadow:none;
+	box-shadow:none;
+}
+.freeow .freeow-error p {
+    padding-top: 0px;
+    font-family:'Lato', sans-serif!important;
+    font-size:14px;
+	font-weight:normal;
+	text-shadow:none;
+	box-shadow:none;
+}

@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) { 
+	
+	/* Retina-specific stuff here */
+	.bgs-logo-large {background-image:url(../../../images/logos/bgs/bgsTitle@2x.png);}
+	.bgs-silhouette {background-image:url(../../../images/general/silhouette@2x.png);}
+	.facebook-white-icon {background-image:url(../../../images/buttons/fb/fbLogo@2x.png);}
+	.google-logo-row {background-image:url(../../../images/icons/powered-by-google-on-white@2x.png);}
+	.places-list .venue-name {font-size: 18px;}
+	#rs-players-icon {background-image:url(../../../images/icons/779-players-gray@2x.png);}
+	#rs-hole-icon {background-image:url(../../../images/icons/790-golf-gray@2x.png);} 
+	#rs-automatic-icon {background-image:url(../../../images/icons/873-automatic-gray@2x.png);}
+	#rs-drink-icon {background-image:url(../../../images/icons/799-beverage-gray@2x.png);}
+	#rs-bonus-icon {background-image:url(../../../images/icons/870-bonus-gray@2x.png);}
+	#rs-penalty-icon {background-image:url(../../../images/icons/875-penalty-gray@2x.png);}
+	#rs-drink-icon-white {background-image:url(../../../images/icons/799-beverage@2x.png);}
+	#rs-bonus-icon-white {background-image:url(../../../images/icons/870-bonus@2x.png);}
+	#rs-penalty-icon-white {background-image:url(../../../images/icons/875-penalty@2x.png);}
+	#rs-delete-icon {background-image:url(../../../images/icons/791-warning-gray@2x.png);}
+	#male-list-icon {background-image:url(../../../images/icons/769-male-gray@2x.png);}
+	#male-list-icon-white {background-image:url(../../../images/icons/769-male@2x.png);}
+	#hole-list-icon {background-image:url(../../../images/icons/790-golf-gray@2x.png);}
+	#rs-cloud-down-icon {background-image:url(../../../images/icons/731-cloud-download-gray@2x.png);}

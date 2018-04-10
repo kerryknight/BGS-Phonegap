@@ -1,0 +1,20 @@
+<div class="bar-list-item places-list-item">
+	<%  if (location.country == 'United States') { %>
+		<div class='venue-distance'><%= BGS.Utilities.convertMeters(location.distance).to("miles") %> miles away&nbsp;&nbsp;></div>
+	<% } else { %>
+		<div class='venue-distance'><%= BGS.Utilities.convertMeters(location.distance).to("kilometers") %> km away&nbsp;&nbsp;></div>
+	<% } %>
+
+	
+	<div class='venue-name anton-font'><%= name %></div>
+	<div class='venue-address'><%= location.address %></div>
+	<div class='venue-address'><%= location.city %>, <%= location.state %>  <%= location.postalCode %></div>
+
+	<%  if (contact.formattedPhone) { %>
+	<div class='venue-phone'><%= contact.formattedPhone %></div>
+	<% } %>
+</div>
+
+
+
+

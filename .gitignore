@@ -1,0 +1,81 @@
+# ANDROID / ECLIPSE
+ 
+# built application files
+*.apk
+*.ap_
+ 
+# files for the dex VM
+*.dex
+ 
+# Java class files
+*.class
+ 
+# generated files - android project subfolder
+Android/bin/
+Android/gen/
+Android/assets/
+ 
+# generated files
+bin/
+gen/
+ 
+# Local configuration file (sdk path, etc)
+local.properties
+ 
+# IOS / Xcode
+build/*
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xcworkspace
+!default.xcworkspace
+xcuserdata
+profile
+*.moved-aside
+
+Bar-Golf-Stars/Resources/Capture.bundle
+Bar-Golf-Stars/Resources/*.lproj
+
+*.devnotes
+ 
+# OSX
+.DS_Store
+ 
+# Thumbnails
+._*
+ 
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# SASS
+/.sass-cache
+.sass-cache/
+/www/css/.sass-cache
+/www/css/.sass-cache/*
+/www/css/.sass-cache/**/
+
+# Grunt
+package.json
+node_modules/ 
+/node_modules
+/www/for-phonegap-build
+/www/grunt-phonegap-builds/*
+/www/grunt-phonegap-builds/**/
+/www/platforms/**
+/www/platforms/*
+/www/plugins
+
+/plugins
+plugins/
+
+# Cordova
+cordova/
+/cordova
+/CordovaLib
+CordovaLib/

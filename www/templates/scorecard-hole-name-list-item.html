@@ -1,0 +1,15 @@
+<%
+var setHoleName = function() {
+	if(name === 'Hole Name Not Added Yet') {
+		return 'Hole Not Assigned';
+	} else {
+		return name;
+	}
+}
+%>
+
+<div class='scorecard-hole'>
+	<div class='scorecard-hole-name'><%= setHoleName() %></div>
+	<div class='scorecard-hole-number anton-font'>#<%= holeNum %></div>
+	<div class='scorecard-hole-par' id="hole-<%= holeNum %>">Par <%= par %> / Handicap <%= (10 - holeNum) %></div>
+</div>

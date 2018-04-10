@@ -1,0 +1,68 @@
+<div class="content-container-header"><div class='content-container-header-text'>Sign up (all fields required)</div></div>
+<div class="content-container">
+	<form class="signup-form">
+		<input type="email" id="signup-username" class="topcoat-text-input" placeholder="Email Address"  data-required data-validate="email" autocorrect="off" autocapitalize="off"/>
+		<input type="password" id="signup-password" class="topcoat-text-input" name="password" placeholder="Password"  data-required data-validate="password"/>
+    <input type="password" id="signup-password-confirm" class="topcoat-text-input" name="confirm" placeholder="Re-enter Password"  data-required data-conditional="confirm"/>
+		<div class="form-right-text">
+			(5 to 12 characters; at least 1 number required)
+		</div>
+    <input type="text" id="signup-displayname" class="topcoat-text-input" placeholder="Display Name for Scorecard"  data-required data-validate="display" autocorrect="off" autocapitalize="off"/>
+    <div class="form-right-text">
+      (3 to 20 characters; will be publicly displayed)
+    </div>
+		
+		<div class="spacer-10-px"></div>
+    <a class="topcoat-button signup-button anton-font">Sign up</a>
+    <a class="topcoat-button back-button anton-font">Cancel</a><br>
+    <div class="spacer-10-px"></div>
+  </form>
+  <script>
+  //****** Validation using jquery-validate.js ******************************//
+  
+  $('form').validate({
+  	onKeyup : true,
+  	eachValidField : function() {
+
+  		$(this).closest('.topcoat-text-input').removeClass('error').addClass('success');
+  	},
+  	eachInvalidField : function() {
+
+  		$(this).closest('.topcoat-text-input').removeClass('success').addClass('error');
+  	},
+  	conditional : {
+  		confirm : function() {
+  			return $(this).val() == $('#signup-password').val();
+  		}
+  	}
+  });
+  
+  $.validateExtend({
+  	email : {
+  		required : true,
+  		conditional : function(value) {
+
+  			return value.length > 4;
+  		},
+  		pattern : /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
+  	},
+
+    display : {
+      required : true,
+      conditional : function(value) {
+
+        return (value.length > 2 && value.length < 21);
+      }
+    },
+  	
+  	password : {
+  		required : true,
+  		conditional : function(value) {
+
+  			return (value.length > 5 && value.length < 13);
+  		},
+  		pattern : /^.*(?=.{5,})(?=.*\d)(?=.*[a-zA-Z]).*$/
+  	}
+  })
+  </script>
+</div>

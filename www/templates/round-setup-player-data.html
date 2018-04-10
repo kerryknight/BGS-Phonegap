@@ -1,0 +1,76 @@
+<table class="form-data-table">
+  <tr class="form-data-table-header"><td>
+    <div id="player-edit-heading" class="lt-gray">Edit Player</div>
+  </td></tr>
+
+  <tr class='form-data-row'>
+    <td>
+      <div id='iscroll-data-wrapper'>
+        <div id='iscroll-data'>
+          <form class="edit-player-form">
+            <div class='player-data-row'>
+              <span>Player's Name</span>
+              <input onclick="this.select()" type="text" id="player-displayname" class="topcoat-text-input" placeholder="Display Name for Scorecard"  data-required data-validate="displayName" autocorrect="off" autocapitalize="off"/>
+              <div class="form-left-text">
+                (3-20 characters; no special chars; publicly displayed)
+              </div>
+              <div class="spacer-10-px"></div>
+            </div>
+
+            <div class='player-data-row'>
+              <span>Player's Handicap</span><br>
+              <input onclick="this.select()" type="number" id="player-handicap" class="topcoat-text-input" placeholder="0"  data-required data-validate="handicap" autocorrect="off" autocapitalize="off"/>
+              <div class="handicap-link">Why use a handicap?</div>
+              <div class="form-left-text">
+                (Negative/positive whole numbers only; optional)
+              </div>
+              <div class="spacer-10-px"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+  <tr class="form-data-table-footer"><td>
+    <div class='player-data-row button-row'>
+      <a class="topcoat-button rs-save-button rs-button anton-font">Save</a>
+      <a class="topcoat-button rs-cancel-button rs-button anton-font">Cancel</a>
+      <a class="topcoat-button rs-delete-button rs-button anton-font drk-purple">Delete</a>
+    </div>
+  </td></tr>
+</table>
+<!-- <div class="blur blur-data-entry"></div> -->
+
+
+
+<script>
+  //****** Validation using jquery-validate.js ******************************//
+  
+  $('form').validate({
+  	onKeyup : true,
+  	eachValidField : function() {
+
+  		$(this).closest('.topcoat-text-input').removeClass('error').addClass('success');
+  	},
+  	eachInvalidField : function() {
+
+  		$(this).closest('.topcoat-text-input').removeClass('success').addClass('error');
+  	}
+  });
+  
+  $.validateExtend({
+    displayName : {
+      required : true,
+      conditional : function(value) {
+        return (value.length > 2 && value.length < 21);
+      },
+      pattern: /^[aábcdeéfghiíjklmnñoöópqrstuúüvwxyzAÁBCDEÉFGHIÍJKLMNÑOÖÓPQRSTUÚÜVWXYZ0-9()_\-\/+=!@#$&*';'"?,\ \_\']*$/
+    },
+
+    handicap : {
+      required : false,
+  		pattern : /^[-+]?[0-9]*$/ //allow number or empty string
+  	}
+  })
+  </script>

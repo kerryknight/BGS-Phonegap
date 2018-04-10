@@ -1,0 +1,96 @@
+<table class="form-data-table">
+  <tr class="form-data-table-header"><td>
+    <div id="rule-edit-heading" class="lt-gray">Edit Rule</div>
+  </td></tr>
+<!-- had to add onclick="this.select()" to the input/textarea fields b/c iScroll 5 beta 1 was disabling form input elements -->
+  <tr class='form-data-row'>
+    <td>
+      <div id='iscroll-data-wrapper'>
+        <div id='iscroll-data'>
+          <form class="edit-rule-form">
+           <div class='rule-data-row'>
+            <span id='name-title'>Rule Name</span>
+            <input onclick="this.select()" type="text" id="rule-name" class="topcoat-text-input" placeholder="Enter name for new rule"  data-required data-validate="name" autocorrect="off" autocapitalize="off"/>
+            <div class="form-left-text">
+             (3-60 characters; no special characters)
+           </div>
+           <div class="spacer-10-px">
+           </div>
+         </div>
+
+         <div class='rule-data-row'>
+          <span id='description-title'>Rule Description</span><br>
+          <textarea onclick="this.select()" id="rule-description" class="topcoat-text-input" placeholder="Optional"  data-required data-validate="description" autocorrect="off" autocapitalize="off"></textarea>
+      <div class="form-left-text">
+        (Up to 200 characters)
+      </div>
+      <div class="spacer-10-px">
+      </div>
+    </div>
+
+    <div class='rule-data-row'>
+      <span id='value-title'>Rule Value</span><br>
+      <input onclick="this.select()" type="number" id="rule-value" class="topcoat-text-input" placeholder="--"  data-required data-validate="value" autocorrect="off" autocapitalize="off"/>
+      <div class="value-link">Stroke Value?</div>
+      <div class="form-left-text">
+       (-/+ whole/half numbers [e.g. -1.5, 2, etc.] only)
+     </div>
+     <div class="spacer-10-px">
+     </div>
+   </div>
+ </form>
+</div>
+</div>
+</td>
+</tr>
+
+<tr class="form-data-table-footer"><td>
+  <div class='rule-data-row button-row'>
+    <a class="topcoat-button rs-save-button rs-button anton-font">Save</a>
+    <a class="topcoat-button rs-cancel-button rs-button anton-font">Cancel</a>
+    <a class="topcoat-button rs-delete-button rs-button anton-font drk-purple">Delete</a>
+  </div>
+</td></tr>
+</table>
+<!-- <div class="blur blur-data-entry"></div> -->
+
+
+
+<script>
+  //****** Validation using jquery-validate.js ******************************//
+  
+  $('form').validate({
+  	onKeyup : true,
+  	eachValidField : function() {
+
+  		$(this).closest('.topcoat-text-input').removeClass('error').addClass('success');
+  	},
+  	eachInvalidField : function() {
+
+  		$(this).closest('.topcoat-text-input').removeClass('success').addClass('error');
+  	}
+  });
+  
+  $.validateExtend({
+    name : {
+      required : true,
+      conditional : function(value) {
+        return (value.length > 2 && value.length < 61);
+      },
+      pattern: /^[aábcdeéfghiíjklmnñoöópqrstuúüvwxyzAÁBCDEÉFGHIÍJKLMNÑOÖÓPQRSTUÚÜVWXYZ0-9()_\-\/+=!@#$&*';'"?,\ \_\']*$/
+    },
+
+    description : {
+      required : false,
+      conditional : function(value) {
+        return (value.length > 0 && value.length < 201);
+      },
+      pattern: /^[aábcdeéfghiíjklmnñoöópqrstuúüvwxyzAÁBCDEÉFGHIÍJKLMNÑOÖÓPQRSTUÚÜVWXYZ0-9()_\-\/+=!@#$&*';'"?,\ \_\']*$/
+    },
+
+    value : {
+      required : true,
+  		pattern : /^[-+]?[0-9]+(\.[05]{1})?$///allow number with decimal or empty string /^[-+]?[0-9]*$/
+  	}
+  })
+  </script>

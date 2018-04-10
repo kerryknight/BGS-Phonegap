@@ -1,0 +1,46 @@
+<% 
+var determineIconId = function() {
+	var iconId = '';
+	
+	if (ruleType === 'drink') {
+			iconId = 'rs-drink-icon';
+		} else if (ruleType === 'bonus'){
+			iconId = 'rs-bonus-icon';
+		} else {
+			iconId = 'rs-penalty-icon';
+		}
+	
+	return iconId;
+}
+
+var determineRuleLabel = function() {
+	var label = '';
+	
+	if (ruleType === 'drink') {
+		label = 'Drink:';
+	} else if (ruleType === 'bonus'){
+		label = 'Bonus:';
+	} else {
+		label = 'Penalty:';
+	} 
+	return label;
+}
+
+%> 
+<div class="data-score-row">
+<div class="list-icon rs-list-item"><div id="<%= determineIconId() %>"></div></div>
+<div class="data-score-item-name"><%= ruleName %></div>
+<table class="anton-font score-table">
+	<tr>
+		<td class="data-score-item-value">
+			<div><%= ruleValue %></div>
+		</td>
+		<td class="data-score-buttons">
+			<div id='delete-one'>Delete 1</div>
+		</td>
+		<td class="data-score-buttons">
+			<div id='delete-all'>Delete All</div>
+		</td>
+	</tr>
+</table>
+</div>

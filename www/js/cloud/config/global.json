@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Bar Golf Stars": {
+            "applicationId": "PG4Fpi5KFo5RBN3RM0vK5bY19hqjXOYgATlwTdYo", 
+            "masterKey": "kv1WguQptKaWA6kOEEJWNRDMSmDoWrYSD2LZlJRg"
+        }, 
+        "_default": {
+            "link": "Bar Golf Stars"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.9"
+    }
+}

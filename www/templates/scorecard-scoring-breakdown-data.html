@@ -1,0 +1,49 @@
+<table class="form-data-table">
+    <tr class="form-data-table-header">
+      <td><div id="score-breakdown-heading" class="lt-gray"></div>
+        <div class='score-data-row button-row'>
+          <a class="topcoat-button score-drink-button score-choice-button anton-font score-choice-button-active">
+          <div>Drinks</div>
+          </a>
+          <a class="topcoat-button score-bonus-button score-choice-button anton-font">
+          <div>Bonuses</div>
+          </a>
+          <a class="topcoat-button score-penalty-button score-choice-button anton-font">
+          <div>Penalties</div>
+          </a>
+        </div>
+        
+        <div class="enter-score-subheader lt-lt-gray">
+          <div class= "subheader-name">Score Name</div>
+          <div class= "subheader-value">Stroke Value Each</div>
+        </div>
+
+        </td>
+    </tr>
+    
+    <!-- had to add onclick="this.select()" to the input/textarea fields b/c iScroll 5 beta 1 was disabling form input elements -->
+    <tr class='form-data-row'>
+      <td><div id='iscroll-score-breakdown-wrapper'>
+          <!-- <div id='iscroll-score-data'>
+          </div> -->
+        </div></td>
+    </tr>
+    <tr class="form-data-table-footer">
+      <td><div class='sc-data-submenu'>
+        <div id='sc-back-to-score-entry' class="anton-font">
+            Back to Score<br>
+            Entry
+          </div>
+          <div id='sc-total-score-data' class="anton-font">
+            <span class="sc-submenu-title">Hole Score:</span><br>
+            <span id='breakdown-total-score'></span>
+          </div>
+          <div id='sc-enter-score-data'>
+          </div>
+          
+        </div>
+        <div class='score-data-row button-row'>
+          <a class="topcoat-button score-cancel-button score-button anton-font">Done</a>
+        </div></td>
+    </tr>
+  </table>

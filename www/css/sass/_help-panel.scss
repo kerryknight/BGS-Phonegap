@@ -1,0 +1,35 @@
+a.trigger{
+	position: absolute;
+	text-decoration: none;
+	font-size: 16px;
+	text-align: center;
+	font-weight: bold;
+	right: 0;
+	width: 45px!important;
+	line-height: 25px;
+	height: 50px;
+	margin-right:-20px;
+	z-index:999999999;
+	@include light-gray(0.8, $drk-gray-font);
+}
+
+a.active.trigger {
+	@include med-gray(0.8, $drk-gray-font);
+	margin-right: 0px;
+}
+
+.panel {
+	-webkit-transform: translate3d(0px,0px,0px);
+	color:#CCC;
+	position: absolute;
+	display: none;
+	background-color: rgba(0,0,0,0.75);
+	height: 90%;
+	z-index:999999998;
+	right: 0;
+	padding: 70px 5% 5% 5%;
+}
+
+.rotate {
+	-webkit-transform: rotate(-90deg);
+}

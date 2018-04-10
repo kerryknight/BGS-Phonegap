@@ -1,0 +1,102 @@
+<!doctype html>
+
+<html>
+<!-- NOTE: UI COMPONENTS ARE NOT TESTED WITH THIS TEST SUITE -->
+<head>
+    <meta charset='utf8'>
+    <title>Bar Golf Stars Test Suite</title>
+    <link rel="stylesheet" href="qunit.css" type="text/css">
+    <script>window.ENV = 'test'</script>
+</head>
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture">
+        <div class='header'></div>
+        <div class='places-bar'></div>
+        <div id='nav-container'></div>
+        <div class='tabbar'></div>
+    </div>
+
+    <!-- #map-canvas is an unused div element to allow for google places searches; not sure why i'm required to put it in -->
+    <div id='map-canvas'></div>
+
+    <!-- Vendors -->
+    <!-- <script src="../js/libs/cordova-2.5.0-ios.js"></script> -->
+    <script src="../js/libs/fastclick.js"></script> <!-- http://cubiq.org/iscroll-4 -->
+    <script src="../js/libs/jquery.js"></script>
+    <script src="../js/libs/jquery.animate-enhanced.js"></script> <!-- http://playground.benbarnett.net/jquery-animate-enhanced/ -->
+    <script src="../js/libs/slidingview.js"></script> <!-- https://github.com/triceam/app-UI -->
+    <script src="../js/libs/freeow.js"></script> <!-- http://pjdietz.com/jquery-plugins/freeow/ -->
+    <script src="../js/libs/underscore.js"></script>
+    <script src="../js/libs/backbone.js"></script>
+    <script src="../js/libs/backbone.marionette.js"></script> <!-- https://github.com/marionettejs/backbone.marionette -->
+    <script src="../js/libs/parse.js"></script>
+    <script src="../js/libs/backstack-parse.js"></script><!-- http://pwalczyszyn.github.io/backstack/# -->
+    <script src="../js/libs/validate.js"></script> <!-- http://plugins.jquery.com/validate -->
+    <script src="../js/libs/iscroll.js"></script> <!-- http://cubiq.org/iscroll-4 -->
+    <script src="../js/libs/iscroll5.js"></script> <!-- http://cubiq.org/iscroll-4-->
+    <script src="../js/libs/retina.js"></script> <!-- http://cubiq.org/iscroll-4 -->
+    <script src="../js/libs/jquery.simplemodal.js"></script> <!-- http://www.ericmmartin.com/projects/simplemodal/ -->
+    <script src="../js/libs/cdv-plugin-fb-connect.js"></script>
+    <script src="../js/libs/facebook_js_sdk.js"></script>
+
+    <!-- Application core (Order matters) -->
+    <script src="../js/src/index.js"></script>
+    <script src="../js/src/foursquare.js"></script>
+    <script src="../js/src/google.js"></script>
+    <script src="../js/src/utilities.js"></script>
+    
+
+    <!-- Models -->
+    <script src="../js/src/entities/places.js"></script>
+    <script src="../js/src/entities/players.js"></script>
+    <script src="../js/src/entities/holes.js"></script>
+    <script src="../js/src/entities/rules.js"></script>
+    <script src="../js/src/entities/scores.js"></script>
+
+    <!-- Apps -->
+    <script src="../js/src/apps/start/StartController.js"></script>
+    <script src="../js/src/apps/start/StartView.js"></script>
+    <script src="../js/src/apps/start/WelcomeView.js"></script>
+    <script src="../js/src/apps/start/LoginView.js"></script>
+    <script src="../js/src/apps/start/SignupView.js"></script>
+    <script src="../js/src/apps/start/ForgotPasswordView.js"></script>
+    <script src="../js/src/apps/main/MainController.js"></script>
+    <script src="../js/src/apps/main/LeftPanelView.js"></script>
+    <script src="../js/src/apps/main/MainView.js"></script>
+    <script src="../js/src/views/ActivityView.js"></script>
+    <script src="../js/src/views/LeaderboardView.js"></script>
+    <script src="../js/src/views/PlayerView.js"></script>
+    <script src="../js/src/apps/places/PlacesController.js"></script>
+    <script src="../js/src/apps/places/list/PlacesListView.js"></script>
+    <script src="../js/src/apps/places/list/BarItemView.js"></script>
+    <script src="../js/src/apps/places/list/TaxiItemView.js"></script>
+    <script src="../js/src/apps/places/map/PlacesMapView.js"></script>
+    <script src="../js/src/apps/round-setup/RoundSetupController.js"></script>
+    <script src="../js/src/apps/round-setup/RoundSetupOptionsView.js"></script>
+    <script src="../js/src/apps/round-setup/RoundSetupListView.js"></script>
+    <script src="../js/src/apps/round-setup/RoundSetupItemView.js"></script>
+    <script src="../js/src/apps/scorecard/ScorecardController.js"></script>
+    <script src="../js/src/apps/scorecard/ScorecardView.js"></script>
+    <script src="../js/src/apps/scorecard/ScorecardItemView.js"></script>
+
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAorU7dUcj-Y_LscTCr_AtJbY1Z1zMHgzI&libraries=places&sensor=true"></script>
+
+    <!-- Test Suite Files -->
+    <script>
+        (function(window, doc){
+            //we run this code here to change the relative address of where our template 
+            //loader needs to look to find our templatesbefore we attempt to load all our views
+            BGS.Utilities.rootTemplateAddress = "../templates/";
+            BGS.Utilities.isUnitTesting = true;
+
+            console.log('****** BE SURE ALL TEST INDEX.HTML SCRIPT TAGS MATCH ROOT INDEX.HTML SCRIPT TAGS *******');
+        })(window, document);
+    </script>
+    <script src="qunit.js"></script>
+    <script src="tests.js"></script>
+
+</body>
+
+</html>

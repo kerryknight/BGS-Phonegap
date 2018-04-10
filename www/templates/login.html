@@ -1,0 +1,38 @@
+<div class="content-container-header"><div class='content-container-header-text'>Log in</div></div>
+<div class="content-container">
+   <form class="login-form">
+      <input type="email" id="login-username" class="topcoat-text-input" data-required data-validate="email" autocorrect="off" autocapitalize="off" placeholder="Email Address">
+      <input type="password" id="login-password" class="topcoat-text-input" data-required placeholder="Password"><br>
+      <div class="spacer-10-px"></div>
+      <a class="login-form topcoat-button login-button anton-font">Submit</a>
+      <a class="login-form topcoat-button back-button anton-font">Cancel</a><br>
+      <div class="spacer-10-px"></div>
+      <a class="forgot-password-link">Forgot password?</a>
+  </form>
+
+  <script>
+  //****** Validation of email (username) field using jquery-validate.js ******************************//
+  $('form').validate({
+  	onKeyup : true,
+  	eachValidField : function() {
+
+  		$(this).closest('.topcoat-text-input').removeClass('error').addClass('success');
+  	},
+  	eachInvalidField : function() {
+
+  		$(this).closest('.topcoat-text-input').removeClass('success').addClass('error');
+  	}
+  });
+
+  $.validateExtend({
+  	email : {
+  		required : true,
+  		conditional : function(value) {
+
+  			return value.length > 4;
+  		},
+  		pattern : /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
+  	}
+  })
+  </script>
+</div>

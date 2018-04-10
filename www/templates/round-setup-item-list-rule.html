@@ -1,0 +1,47 @@
+<% 
+var determineIconId = function() {
+	var iconId = '';
+	
+	if (type === 'drink') {
+			iconId = 'rs-drink-icon';
+		} else if (type === 'bonus'){
+			iconId = 'rs-bonus-icon';
+		} else {
+			iconId = 'rs-penalty-icon';
+		}
+	
+	return iconId;
+}
+
+var determineRuleLabel = function() {
+	var label = '';
+	
+	if (type === 'drink') {
+		label = 'Drink:';
+	} else if (type === 'bonus'){
+		label = 'Bonus:';
+	} else {
+		label = 'Penalty:';
+	} 
+	return label;
+}
+
+var formatDisclosureIndicator = function() {
+	var disclosure = '';
+
+	if (name != 'Touch to Add New Drink' && name != 'Touch to Add New Bonus' && name != 'Touch to Add New Penalty') {
+		disclosure = '<div><span>&nbsp;></span></div><div class="rs-value-type">Stroke Value:</div><div class="rs-value">' + value + '</div>';
+	} else {
+		disclosure = '<span>&nbsp;></span>';
+	}
+
+	return disclosure;
+}
+%> 
+<!-- For rows where there isn't a rule added, we'll make the row gray and add a bottom border to separate for other gray rows -->
+<li class='rs-options-header font-size-20'>
+	<div class="list-icon rs-list-item"><div id="<%= determineIconId() %>"></div></div>
+	<div class="rs-chevron"><%= formatDisclosureIndicator() %></div>
+	<div class="rs-type"><%= determineRuleLabel() %></div>
+	<div class="rs-name"><%= name %></div>
+</li>

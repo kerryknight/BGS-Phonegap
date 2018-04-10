@@ -1,0 +1,54 @@
+/* LEFT MENU PANEL */
+.left-menu-bg {
+	z-index:1!important;
+	background-color: #3d4143;
+	width: 250px;
+	height: 100%;
+	top:0;
+	float:left!important;
+}
+
+.left-menu-silhouette {
+	z-index:10!important;
+	width: 250px;
+	height: 100%;
+	background-image:url(../../../images/general/silhouette.png);
+	background-repeat:no-repeat;
+	background-size:contain;
+	top:0;
+	margin-top:-2px!important;
+	opacity: 0.2;
+}
+
+.spacer-10-px {
+	height: 10px;
+	clear: left;
+}
+
+.center-text {
+	text-align: center;
+}
+
+.username-text {
+	color: #DFE2E2;
+	font-weight: 600;
+}
+
+.slidingview_sidebar .topcoat-list__item,
+.slidingview_sidebar .topcoat-list__item--first {
+	width: 230px;
+}
+
+.accent-color-box {
+	width:3px;
+	height:54px;
+	margin-left:0;
+	margin-top:0;
+}
+
+.accent-color-box-wide {
+	width:8px;
+	height:54px;
+	margin-left:0;
+	margin-top:0;
+}

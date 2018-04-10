@@ -1,0 +1,137 @@
+//these are styles for the data entry views
+
+#menu-region,
+#data-region,
+#breakdown-region,
+.manual-entry {
+	bottom: 0px;
+	position: fixed;
+	width: 100%;
+	display: none;
+	color: white;
+	z-index:3;
+	-webkit-transform: translate3d(0px,0px,0px);
+}
+
+.form-data-table {
+	@include light-gray(1.0, $drk-gray-font);
+	width: 101%;
+	border-spacing:0px;
+	height:100%;
+	position:absolute;
+	z-index: 5;
+}
+
+.form-data-table td {
+	padding:0;
+}
+
+.form-data-table-header {
+	height: 40px;
+}
+
+.form-data-table-footer {
+	height: 47px;
+}
+
+.manual-entry {
+	height: 100px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 100px!important;
+	@include source-sans(18px, bold);
+}
+
+.selected-item {
+	border: 1px solid $med-purple; /* green  was 0ee186*/
+    -webkit-box-shadow: 0 0 4px #ac90c6; /* was 08f271*/
+    box-shadow: 0 0 4px #ac90c6, inset 0px 1px 0px rgba(0,0,0,0.15);
+}
+
+.edit-player-form,
+.edit-rule-form,
+.edit-score-form {
+	font-size: 14px!important;
+	padding-top:10px;
+}
+
+#player-edit-heading,
+#rule-edit-heading,
+#score-edit-heading,
+#score-breakdown-heading {
+	top:0;
+	@include side-lr(0);
+	width:100%;
+	height:40px!important;
+	line-height: 40px;
+	text-align: center;
+	color: rgba(0, 0, 0, 0.85)!important;
+	text-overflow: ellipsis!important;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#rule-description {
+	height: 50px;
+	@include source-sans(14px, normal);
+	width:100%;
+	@include side-margin(0px);
+	resize: none;
+	@include side-padding(5px);
+}
+
+
+.player-data-row,
+.rule-data-row,
+.score-data-row {
+	@include side-lr(0);
+	@include side-padding(10px);
+}
+
+#player-handicap,
+#rule-value {
+	width: 120px;
+	text-align: center;
+	font-size: 22px!important;
+}
+
+.handicap-link,
+.value-link {
+	color: $drk-purple; /* lt purple*/
+	float: right;
+	width: 55%;
+	text-align: center;
+	line-height: 31px;
+	vertical-align: middle;
+	margin-top: 5px;
+	font-weight: 900;
+}
+
+.button-row {
+	display: -webkit-box;
+	width: 100%;
+	margin-bottom:0;
+	bottom:0;
+	@include side-margin(-10px);
+	@include gray-border(top, 0.2);
+}
+
+.button-action-row {
+	margin: 5px!important;
+	width:inherit;
+	border: none;
+
+	a {
+		border: 1px solid $drk-gray;
+		@include side-margin(3px);
+
+		&:first-child {
+			margin-left: 6px;
+		}
+
+		&:last-child {
+			margin-right: 6px;
+		}
+	}
+
+}

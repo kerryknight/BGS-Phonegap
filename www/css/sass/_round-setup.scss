@@ -1,0 +1,213 @@
+//Round Setup
+
+//MIXINS
+//------------------------------------------------------------
+@mixin overlay() {
+	height:inherit;
+	z-index:4;
+	@include light-gray(0.95, $drk-gray-font);
+	position:relative;
+	vertical-align: middle;
+	overflow: hidden;
+}
+//------------------------------------------------------------
+
+.rs-delete-button {
+	color:white!important;
+
+	&:active {
+		background-color: $drk-gray;
+		color:$drk-gray-font;
+	}
+}
+
+.rs-save-button,
+.score-save-button {
+	color:white!important;
+	background-color: $lt-purple;
+
+	&:active {
+		background-color: $med-purple;
+	}
+}
+
+.round-setup {
+	height: 100%;
+	margin-top:0!important;
+	top:90px;
+}
+
+.rs-list {
+	list-style: none;
+	@include side-lr(0);
+	margin-top:2px;
+	width:100%;
+	@include side-padding(0px);
+	white-space: nowrap;
+}
+
+.rs-list li {
+	height:30px;
+	padding-right:10px;
+}
+
+.rs-item-list li {
+	height:50px!important;
+	line-height: 50px!important;
+}
+
+.rs-options-header {
+	font-weight: bold;
+	vertical-align: middle;
+	line-height: 30px;
+	color:white;
+	padding-left:10px;
+}
+
+.add-pad-20 {
+	padding-top: 20px;
+}
+
+.rs-option {
+	height: 50px!important;
+	width:100%;
+}
+
+.rs-options-title {
+	font-weight: 500;
+	padding-top:5px;
+}
+
+.rs-options-title,
+.rs-options-desc {
+	padding-left: 48px;
+	text-overflow: ellipsis!important;
+}
+
+.rs-options-desc {
+	font-size: 13px;
+}
+
+.round-setup-player-data,
+.round-setup-rule-data {
+	@include shadow(0.3);
+}
+
+.rs-manual-entry-overlay {
+	@include overlay();
+}
+
+.rs-options-button {
+	height: 55px;
+	bottom:10px;
+	position:fixed;
+	text-align: center;
+	z-index:999;
+	margin: 5px;
+	@include side-lr(0);
+
+	.rs-options-overlay {
+		@include overlay();
+		line-height: 60px;
+		margin: 5px;
+		border: 1px solid $lt-drk-gray;
+		@include med-gray(0.80, $drk-gray-font);
+
+		&:active, {
+			@include med-gray(0.95, $drk-gray-font);
+		}
+
+		.rs-options-button-header {
+			@include source-sans(20px, 400);
+			height: 23px!important;
+			margin-top: 5px;
+		}
+		.rs-options-button-footer {
+			top: -10px;
+			height: 19px!important;
+			@include source-sans(14px, 100);
+		}
+	}	
+}
+
+.rs-list-item {
+	margin-left: -10px!important; /*to offset rs-options-header*/
+}
+
+.rs-type {
+	font-size: 16px!important;
+	height:20px;
+	top:-10px!important;
+}
+
+.rs-name {
+	top: 5px;
+	height: 60%;
+	@include source-sans(13px, 100);
+}
+
+.rs-type,
+.rs-name {
+	width: 75%;
+	text-overflow: ellipsis!important;
+	white-space: nowrap;
+	padding-left: 38px;
+	position:relative;
+}
+
+.rs-value-type {
+	font-size: 16px!important;
+	height:20px;
+	top:-10px!important;
+	line-height:30px!important;
+	width:100%;
+}
+
+.rs-value {
+	height: 60%;
+	font-size: 20px;
+	width:100%;
+	line-height: 30px;
+	@include source-sans(18px, 100);
+	color:$drk-purple;
+}
+
+.rs-chevron {
+	text-align: center;
+	padding-right: 5px;
+	float: right;
+	font-size: 14px!important;
+	vertical-align: middle!important;
+	line-height: 50px!important;
+	height: 50px;
+	width:115px;
+}
+
+.rs-button {
+	display: -webkit-box;
+  	-webkit-box-flex: 1;
+	width:32%;
+	display:block;
+	float:left;
+	margin: 0;
+  	padding: 0;
+}
+
+.rs-options-chevron,
+.rs-chevron span {
+	height:50px;
+	line-height: 50px;
+	float:right;
+	font-size: 30px!important;
+	width:15px;
+	right:0!important;
+	color:rgba(57, 62, 64, 0.5);
+}
+
+.rs-chevron span {
+	font-weight: 100;
+}
+
+.rs-options-chevron {
+	padding-right: 10px;
+}

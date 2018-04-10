@@ -1,0 +1,15 @@
+<%
+ var formatScore = function() {
+ 	return 'p-row-' + playerNum;
+ }
+%>
+
+<table class='scorecard-player-table' border="0">
+	<tr>
+		<td class='scorecard-player-name'><%= displayName %></td>
+		<td rowspan="2" class='scorecard-player-total-score <%= formatScore() %>'>--</td>
+	</tr>
+	<tr>
+		<td class='scorecard-player-handicap'>Handicap:(<%= handicap %>)</td>
+	</tr>
+</table>

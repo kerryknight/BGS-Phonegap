@@ -1,0 +1,144 @@
+/* dim background behind loading spinner */
+#spinnerMask {
+	z-index:1000;
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	width:100%;
+	background:#000;
+	opacity:0.0;/*hidden by default*/
+	-moz-opacity:0.0;/*hidden by default*/
+	filter:alpha(opacity=0);/*hidden by default*/
+	visibility:hidden;	
+}
+
+/* Spinner: http://37signals.com/svn/posts/2577-loading-spinner-animation-using-css-and-webkit */
+div.spinner {
+	position: absolute;
+	width: 54px;
+	height: 54px;
+	display: inline-block;
+
+	left: 50%;
+	top: 55%;
+	margin: -54px 0 0 -27px;
+
+}
+
+div.spinner div {
+	width: 12%;
+	height: 26%;
+	background: #666;
+	position: absolute;
+	left: 44.5%;
+	top: 37%;
+	opacity: 0;
+	-webkit-animation: fade 1s linear infinite;
+	-webkit-border-radius: 50px;
+	-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+/* dim background behind loading spinner */
+div.spinnerMask {
+	z-index:1000;
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	width:100%;
+	background:#000;
+	opacity:0.0;/*hidden by default*/
+	-moz-opacity:0.0;/*hidden by default*/
+	filter:alpha(opacity=0);/*hidden by default*/
+	visibility:hidden;	
+}
+
+.spinner-text {
+	width: 250px!important;
+	margin-top: 40px;
+	text-align: center;
+	left:-125px!important;
+	background: none!important;
+	-webkit-box-shadow: none!important;
+	padding-left:50%!important;
+	padding-right:50%!important;
+}
+
+.spinner-text span {
+	background-color: rgba(223, 226, 226, 1.0)!important;
+	padding-top: 75px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	-webkit-border-radius: 15px;
+}
+
+div.spinner div.bar1 {
+	-webkit-transform: rotate(0deg) translate(0, -142%);
+	-webkit-animation-delay: 0s;
+}
+
+div.spinner div.bar2 {
+	-webkit-transform: rotate(30deg) translate(0, -142%);
+	-webkit-animation-delay: -0.9167s;
+}
+
+div.spinner div.bar3 {
+	-webkit-transform: rotate(60deg) translate(0, -142%);
+	-webkit-animation-delay: -0.833s;
+}
+
+div.spinner div.bar4 {
+	-webkit-transform: rotate(90deg) translate(0, -142%);
+	-webkit-animation-delay: -0.75s;
+}
+
+div.spinner div.bar5 {
+	-webkit-transform: rotate(120deg) translate(0, -142%);
+	-webkit-animation-delay: -0.667s;
+}
+
+div.spinner div.bar6 {
+	-webkit-transform: rotate(150deg) translate(0, -142%);
+	-webkit-animation-delay: -0.5833s;
+}
+
+div.spinner div.bar7 {
+	-webkit-transform: rotate(180deg) translate(0, -142%);
+	-webkit-animation-delay: -0.5s;
+}
+
+div.spinner div.bar8 {
+	-webkit-transform: rotate(210deg) translate(0, -142%);
+	-webkit-animation-delay: -0.41667s;
+}
+
+div.spinner div.bar9 {
+	-webkit-transform: rotate(240deg) translate(0, -142%);
+	-webkit-animation-delay: -0.333s;
+}
+
+div.spinner div.bar10 {
+	-webkit-transform: rotate(270deg) translate(0, -142%);
+	-webkit-animation-delay: -0.25s;
+}
+
+div.spinner div.bar11 {
+	-webkit-transform: rotate(300deg) translate(0, -142%);
+	-webkit-animation-delay: -0.1667s;
+}
+
+div.spinner div.bar12 {
+	-webkit-transform: rotate(330deg) translate(0, -142%);
+	-webkit-animation-delay: -0.0833s;
+}
+
+@-webkit-keyframes fade {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0.75;
+	}
+}

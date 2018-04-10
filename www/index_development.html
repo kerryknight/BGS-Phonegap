@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- Copyright 2013 Kerry Knight -->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <title>Bar Golf Stars</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/css/src/styles.css">
+</head>
+
+<body>
+
+<div id="help-view"></div>
+
+<!-- hack to get bangers font to load faster so it doesn't appear after buttons already have; div never used -->
+<div class="anton-font" style="visibility:hidden">BGS</div>
+
+<div id="fb-root" style="display:none"></div>
+
+<!-- #freeow is a jq plugin used to show custom animated alert bars from bottom/top of screen -->
+<div id="freeow" class="freeow"></div>
+
+<!-- #map-canvas is an unused div element to allow for google places searches; not sure why i'm required to put it in -->
+<div id='map-canvas'></div>
+
+<!-- simplemodal.js alert content -->
+<div id='sm-confirm'>
+    <div class='sm-header'></div>
+    <div class='sm-message'></div>
+    <div class='sm-buttons'>
+        <a class="topcoat-button sm-yes"></a>
+        <a class="topcoat-button sm-no simplemodal-close"></a>
+    </div>
+</div>
+
+<div id="container"></div>
+
+<!-- #mask used in conjunction with jqm spinner to present dimmed modal effect -->
+<div class="spinnerMask"></div>
+<div id="spinner" class="spinner">
+    <div class="spinner-text"><span></span></div>
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+    <div class="bar4"></div>
+    <div class="bar5"></div>
+    <div class="bar6"></div>
+    <div class="bar7"></div>
+    <div class="bar8"></div>
+    <div class="bar9"></div>
+    <div class="bar10"></div>
+    <div class="bar11"></div>
+    <div class="bar12"></div>
+</div>
+
+</body>
+
+<!-- TODO: Instead of importing all these .js files separately, which is a huge network burden on 
+     requiring a separate browser request, if this project ever becomes a hosted web app and not just
+     a native app, an AMD solution, such as Require.js, should be used and/or all a server compile function
+     used to compile all the files into as few as possible; this current implementation is fine for natively
+     compiled apps as no server requests are made
+-->
+
+<!-- Vendor (Order matters) -->
+<!-- There is an issue when using Ripple extension in Chrome with cordova.js; for Ripple use, uncomment the android 
+version below as the iOS version causes events to be fired twice in Ripple; However, make sure to uncomment the iOS 
+version when building in XCode (and re-comment out the android version) or you'll get an error on-device -->
+<!-- use this cordova-2.5.0-android.js with Ripple -->
+<!-- <script src="js/libs/cordova-2.5.0-android.js"></script> -->
+<!-- use this cordova-2.9.0-ios.js with XCode locally -->  
+<!-- <script src="js/libs/cordova-2.9.0-ios.js"></script>  -->
+<script src="js/libs/fastclick.js"></script> <!-- http://cubiq.org/iscroll-4 -->
+<script src="js/libs/jquery.js"></script>
+<script src="js/libs/jquery.animate-enhanced.js"></script> <!-- http://playground.benbarnett.net/jquery-animate-enhanced/ -->
+<script src="js/libs/slidingview.js"></script> <!-- https://github.com/triceam/app-UI -->
+<script src="js/libs/freeow.js"></script> <!-- http://pjdietz.com/jquery-plugins/freeow/ -->
+<script src="js/libs/underscore.js"></script>
+<script src="js/libs/backbone.js"></script>
+<script src="js/libs/backbone.marionette.js"></script> <!-- https://github.com/marionettejs/backbone.marionette -->
+<script src="js/libs/parse.js"></script>
+<script src="js/libs/backstack-parse.js"></script><!-- http://pwalczyszyn.github.io/backstack/# -->
+<script src="js/libs/validate.js"></script> <!-- http://plugins.jquery.com/validate -->
+<script src="js/libs/iscroll.js"></script> <!-- http://cubiq.org/iscroll-4-->
+<script src="js/libs/iscroll5.js"></script> <!-- http://cubiq.org/iscroll-4-->
+<script src="js/libs/retina.js"></script> 
+<script src="js/libs/jquery.simplemodal.js"></script> <!-- http://www.ericmmartin.com/projects/simplemodal/ -->
+<script src="js/libs/jquery.simplemodal.confirm.js"></script> <!-- http://www.ericmmartin.com/projects/simplemodal/ -->
+<script src="js/libs/jquery.viewport.js"></script> <!-- http://www.appelsiini.net/projects/viewport-->
+<script src="js/libs/jquery.slidePanel.js"></script> <!-- http://www.jqeasy.com/jquery-slide-panel-plugin/demo/-->
+<!-- <script src="https://d1a62freaxhn7x.cloudfront.net/v1/crittercismClientLibraryMin.js"></script> -->
+
+<!-- UNCOMMENT FOR PHONEGAP BUILD -->
+<!-- <script src="phonegap.js"></script> 
+<script src="cdv-plugin-fb-connect.js"></script>
+<script src="facebook-js-sdk.js"></script> -->
+
+<!-- Application core (Order matters) -->
+<script src="js/src/index.js"></script>
+<script src="js/src/foursquare.js"></script>
+<script src="js/src/google.js"></script>
+<script src="js/src/utilities.js"></script>
+
+<!-- Models -->
+<script src="js/src/entities/places.js"></script>
+<script src="js/src/entities/players.js"></script>
+<script src="js/src/entities/holes.js"></script>
+<script src="js/src/entities/rules.js"></script>
+<script src="js/src/entities/scores.js"></script>
+
+<!-- Apps -->
+<script src="js/src/apps/start/StartController.js"></script>
+<script src="js/src/apps/start/StartView.js"></script>
+<script src="js/src/apps/start/WelcomeView.js"></script>
+<script src="js/src/apps/start/LoginView.js"></script>
+<script src="js/src/apps/start/SignupView.js"></script>
+<script src="js/src/apps/start/ForgotPasswordView.js"></script>
+<script src="js/src/apps/main/MainController.js"></script>
+<script src="js/src/apps/main/LeftPanelView.js"></script>
+<script src="js/src/apps/main/MainView.js"></script>
+<script src="js/src/views/ActivityView.js"></script>
+<script src="js/src/views/LeaderboardView.js"></script>
+<script src="js/src/views/PlayerView.js"></script>
+<script src="js/src/apps/places/PlacesController.js"></script>
+<script src="js/src/apps/places/list/PlacesListView.js"></script>
+<script src="js/src/apps/places/list/BarItemView.js"></script>
+<script src="js/src/apps/places/list/TaxiItemView.js"></script>
+<script src="js/src/apps/places/map/PlacesMapView.js"></script>
+<script src="js/src/apps/round-setup/RoundSetupController.js"></script>
+<script src="js/src/apps/round-setup/RoundSetupOptionsView.js"></script>
+<script src="js/src/apps/round-setup/RoundSetupListView.js"></script>
+<script src="js/src/apps/round-setup/RoundSetupItemView.js"></script>
+<script src="js/src/apps/scorecard/ScorecardController.js"></script>
+<script src="js/src/apps/scorecard/ScorecardView.js"></script>
+<script src="js/src/apps/scorecard/ScorecardItemView.js"></script>
+
+<!-- map stuff -->
+<script src='js/libs/mapbox-1.3.1.js'></script>
+<script src="js/libs/L.Control.Locate.js"></script> <!-- https://github.com/domoritz/leaflet-locatecontrol -->
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAorU7dUcj-Y_LscTCr_AtJbY1Z1zMHgzI&libraries=places&sensor=true"></script>
+
+</html>

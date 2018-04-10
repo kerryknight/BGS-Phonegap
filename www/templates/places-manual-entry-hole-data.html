@@ -1,0 +1,50 @@
+<div class="round-setup-player-data">
+
+<div class="rs-manual-entry-overlay">
+<div id="player-edit-heading" class="lt-gray">Select Above or Enter Manually Below</div>
+<form class="edit-player-form">
+	<div class='player-data-row'>
+		<span id="hole-name"></span>
+	    <input type="text" id="hole-displayname" class="topcoat-text-input" placeholder="Use this if you can't find your bar listed"  data-required data-validate="displayName" autocorrect="off" autocapitalize="off"/>
+	    <div class="form-left-text">
+	      (3-30 characters; no special characters)
+	    </div>
+	    <div class="spacer-10-px"></div>
+	</div>
+  
+  <div class='player-data-row button-row'>
+	    <a class="topcoat-button rs-save-button rs-button anton-font">Save</a>
+	    <a class="topcoat-button rs-cancel-button rs-button anton-font">Cancel</a>
+	    <a class="topcoat-button rs-delete-button rs-button anton-font drk-purple">Reset</a>
+  </div>
+</form>
+</div>  
+
+<!-- This overlay isn't blur doesn't seem to want to work with the overlay; needs more work
+<div class="blur blur-data-entry"></div> -->
+</div>
+<script>
+  //****** Validation using jquery-validate.js ******************************//
+  
+  $('form').validate({
+  	onKeyup : true,
+  	eachValidField : function() {
+
+  		$(this).closest('.topcoat-text-input').removeClass('error').addClass('success');
+  	},
+  	eachInvalidField : function() {
+
+  		$(this).closest('.topcoat-text-input').removeClass('success').addClass('error');
+  	}
+  });
+  
+  $.validateExtend({
+    displayName : {
+      required : true,
+      conditional : function(value) {
+        return (value.length > 2 && value.length < 31);
+      },
+      pattern: /^[aábcdeéfghiíjklmnñoöópqrstuúüvwxyzAÁBCDEÉFGHIÍJKLMNÑOÖÓPQRSTUÚÜVWXYZ0-9()_\-\/+=!@#$&*';'"?,\ \_\']*$/
+    }
+  })
+  </script>
